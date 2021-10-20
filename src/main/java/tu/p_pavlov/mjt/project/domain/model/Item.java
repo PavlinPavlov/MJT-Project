@@ -1,21 +1,15 @@
 package tu.p_pavlov.mjt.project.domain.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Set;
 
-@Document
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString
+@Document("items")
 public class Item extends BaseDocument {
 
     @Field("ItemName")

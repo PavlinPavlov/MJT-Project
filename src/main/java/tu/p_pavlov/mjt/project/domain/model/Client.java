@@ -7,10 +7,16 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Document("warehouses")
-public class Warehouse extends BaseDocument {
+@Document("clients")
+public class Client extends BaseDocument {
 
-    @Field("WarehouseAddress")
+    @Field("Organization")
+    private boolean isOrganization;
+
+    @Field("BillingAddress")
     private String address;
+
+    @Field("Phone")
+    private String phone;
 
 }
