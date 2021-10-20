@@ -7,11 +7,11 @@ import tu.p_pavlov.mjt.project.domain.repository.ItemRepository;
 import tu.p_pavlov.mjt.project.domain.service.ItemService;
 
 @Service
-public class ReactiveItemService implements ItemService {
+public class ItemServiceImpl implements ItemService {
 
     private final ItemRepository itemRepository;
 
-    public ReactiveItemService(ItemRepository itemRepository) {
+    public ItemServiceImpl(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
