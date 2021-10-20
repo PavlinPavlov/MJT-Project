@@ -10,6 +10,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document("clients")
 public class PersonalClient extends Client {
 
-    @Field("ClientName")
-    private String name;
+    @Field("ClientFirstName")
+    private String firstName;
+
+    @Field("ClientLastName")
+    private String lastName;
 }
