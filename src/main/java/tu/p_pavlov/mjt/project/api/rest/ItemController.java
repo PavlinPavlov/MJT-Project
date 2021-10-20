@@ -17,6 +17,8 @@ import tu.p_pavlov.mjt.project.api.dto.ItemWriteDto;
 import tu.p_pavlov.mjt.project.domain.model.Item;
 import tu.p_pavlov.mjt.project.domain.service.ItemService;
 
+import javax.validation.Valid;
+
 import static tu.p_pavlov.mjt.project.util.constant.Constants.ENDPOINT_API;
 import static tu.p_pavlov.mjt.project.util.constant.Constants.ENDPOINT_ITEMS;
 
@@ -51,7 +53,7 @@ public class ItemController {
     }
 
     @PostMapping
-    public ResponseEntity<Mono<ItemReadDto>> create(@RequestBody ItemWriteDto itemToCreate) {
+    public ResponseEntity<Mono<ItemReadDto>> create(@RequestBody @Valid ItemWriteDto itemToCreate) {
         Item itemToSave = modelMapper.map(itemToCreate, Item.class);
 
         Mono<ItemReadDto> createdItemMono = itemService.save(itemToSave)
