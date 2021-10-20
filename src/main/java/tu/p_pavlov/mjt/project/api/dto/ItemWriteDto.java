@@ -6,6 +6,5 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
 public class ItemWriteDto extends ItemBaseDto {
 }

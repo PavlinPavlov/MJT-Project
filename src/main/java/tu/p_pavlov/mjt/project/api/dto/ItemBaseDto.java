@@ -2,11 +2,12 @@ package tu.p_pavlov.mjt.project.api.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Data
-@Builder
+@NoArgsConstructor
 public class ItemBaseDto {
 
     private String name;

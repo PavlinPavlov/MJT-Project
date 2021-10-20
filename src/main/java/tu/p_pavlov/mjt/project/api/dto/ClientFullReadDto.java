@@ -7,7 +7,7 @@ import tu.p_pavlov.mjt.project.domain.enumeration.FirmClientRank;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+//@Builder
 public class ClientFullReadDto extends ClientBaseDto {
 
     private String id;
