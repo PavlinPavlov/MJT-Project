@@ -8,7 +8,6 @@ import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
-//@Builder
 public class ClientBaseDto {
 
     private boolean isOrganization;
