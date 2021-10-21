@@ -12,5 +12,7 @@ public interface ClientService {
 
     Flux<Client> findAll();
 
+    <T extends Client> Flux<T> findAll(Class<T> clazz);
+
     Mono<Void> deleteById(String id);
 }

@@ -8,15 +8,11 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Document("clients")
-public class Client extends BaseDocument {
+public class PersonalClient extends Client {
 
-    @Field("Organization")
-    private boolean isOrganization;
+    @Field("ClientFirstName")
+    private String firstName;
 
-    @Field("BillingAddress")
-    private String address;
-
-    @Field("Phone")
-    private String phone;
-
+    @Field("ClientLastName")
+    private String lastName;
 }

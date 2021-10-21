@@ -1,22 +1,20 @@
 package tu.p_pavlov.mjt.project.domain.model;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import tu.p_pavlov.mjt.project.domain.enumeration.FirmClientRank;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Document("clients")
-public class Client extends BaseDocument {
+public class BusinessClient extends Client {
 
-    @Field("Organization")
-    private boolean isOrganization;
+    @Field("Name")
+    private String organizationName;
 
-    @Field("BillingAddress")
-    private String address;
-
-    @Field("Phone")
-    private String phone;
-
+    @Field("BusinessRank")
+    private FirmClientRank rank;
 }

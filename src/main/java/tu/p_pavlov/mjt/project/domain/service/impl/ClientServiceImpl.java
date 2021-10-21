@@ -32,6 +32,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public <T extends Client> Flux<T> findAll(Class<T> clazz) {
+        return clientRepository.findAll(clazz);
+    }
+
+    @Override
     public Mono<Void> deleteById(String id) {
         return clientRepository.deleteById(id);
     }
