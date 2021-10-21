@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tu.p_pavlov.mjt.project.domain.model.Purchase;
 
 @Repository
-public interface PurchaseRepository extends ReactiveMongoRepository<Purchase, String> {
+public interface PurchaseRepository extends ReactiveMongoRepository<Purchase, String>, PurchaseRepositoryCustom {
 }

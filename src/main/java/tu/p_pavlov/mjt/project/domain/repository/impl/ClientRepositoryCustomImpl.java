@@ -1,4 +1,4 @@
-package tu.p_pavlov.mjt.project.domain.repository;
+package tu.p_pavlov.mjt.project.domain.repository.impl;
 
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import tu.p_pavlov.mjt.project.domain.model.Client;
+import tu.p_pavlov.mjt.project.domain.repository.ClientRepositoryCustom;
 
 @Repository
 @Transactional(readOnly = true)

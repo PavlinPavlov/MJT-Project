@@ -3,6 +3,7 @@ package tu.p_pavlov.mjt.project.domain.model;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import tu.p_pavlov.mjt.project.domain.enumeration.FirmClientRank;
