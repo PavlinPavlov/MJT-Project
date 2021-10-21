@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tu.p_pavlov.mjt.project.domain.model.Client;
 
 @Repository
-public interface ClientRepository extends ReactiveMongoRepository<Client, String> {
+public interface ClientRepository extends ReactiveMongoRepository<Client, String>, ClientRepositoryCustom {
 }
