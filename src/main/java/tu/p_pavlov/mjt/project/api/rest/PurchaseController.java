@@ -15,20 +15,23 @@ import tu.p_pavlov.mjt.project.api.dto.PurchaseReadDto;
 import tu.p_pavlov.mjt.project.api.dto.PurchaseWriteDto;
 import tu.p_pavlov.mjt.project.domain.PurchaseFilter;
 import tu.p_pavlov.mjt.project.domain.model.Purchase;
-import tu.p_pavlov.mjt.project.domain.repository.PurchaseRepository;
+import tu.p_pavlov.mjt.project.domain.service.PurchaseService;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
 import java.time.LocalDateTime;
 
+import static tu.p_pavlov.mjt.project.util.constant.Constants.ENDPOINT_API;
+import static tu.p_pavlov.mjt.project.util.constant.Constants.ENDPOINT_PURCHASES;
+
 @RestController
-@RequestMapping("/test")
+@RequestMapping(ENDPOINT_API + ENDPOINT_PURCHASES)
 public class PurchaseController {
 
-    private final PurchaseRepository purchaseService;
+    private final PurchaseService purchaseService;
     private final ModelMapper modelMapper;
 
-    public PurchaseController(PurchaseRepository purchaseService, ModelMapper modelMapper) {
+    public PurchaseController(PurchaseService purchaseService, ModelMapper modelMapper) {
         this.purchaseService = purchaseService;
         this.modelMapper = modelMapper;
     }
