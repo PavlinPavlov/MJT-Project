@@ -5,6 +5,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.support.PageableExecutionUtils;
 import reactor.core.publisher.Flux;
@@ -25,6 +26,10 @@ public class PurchaseRepositoryCustomImpl implements PurchaseRepositoryCustom {
     public Mono<Page<Purchase>> findAll(int page, int size, PurchaseFilter filter) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "_id"));
         Query query = new Query().with(pageable);
+
+        query.addCriteria(
+                Criteria.where("purchaseTime").lte(filter.getLastDate()).gte(filter.getFirstDate())
+        );
 
         Flux<Purchase> chatUserFlux = mongoTemplate.find(query, Purchase.class);
         Mono<Long> countMono = mongoTemplate.count(Query.of(query).limit(-1).skip(-1), Purchase.class);
